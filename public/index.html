@@ -29,6 +29,37 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Array of words
+        const wordsArray = ["Hello", "नमस्ते", "ہیلو", "Hola", "Bonjour", "Hallo", "Ciao", "Привет", "你好", "مرحبا"];
+
+        // Function to display words one by one with a gap of 1 second
+        function displayWords() {
+            let index = 0;
+            const intervalId = setInterval(() => {
+                if (index < wordsArray.length) {
+                    document.getElementById('container').textContent = wordsArray[index];
+                    index++;
+                } else {
+                    clearInterval(intervalId);
+                    loader();
+                }
+            }, 200); // 200 milliseconds
+        }
+
+        // Call the function to start displaying words
+        displayWords();
+
+        function loader() {
+            gsap.to('#loader', {
+                y: "-100%",
+                duration: 1,
+                borderRadius: "100%",
+                opacity: 0
+            });
+        }
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
