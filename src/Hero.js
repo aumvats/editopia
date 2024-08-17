@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hero.css';
-import logo from '/editopia-productions/editopia/src/logo_editopia.jpg';
-import particle from '/editopia-productions/editopia/src/particle.jpg';
+import logo from './logo_editopia.jpg';
+import particle from './particle.jpg';
 
 const Hero = () => {
   return (
